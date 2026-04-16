@@ -2,7 +2,6 @@
                                             TP1 - Implementación de Patrones de Diseño en Java
 
                                             
-Asignatura: Programación II / Desarrollo de Software
 Valentino Cutrera
 16/04/2026
 
