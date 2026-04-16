@@ -51,6 +51,6 @@ Control: El desarrollador de la clase base asegura que el orden de los pasos no 
 Extensibilidad: Es muy fácil añadir nuevos métodos de pago sin tocar el código existente.
 
 
-Conclusión
+5. Conclusión
 La aplicación de patrones de diseño no es solo una práctica académica, sino una necesidad en el desarrollo de software moderno. Durante este TP, se ha comprobado que el uso de Prototype agiliza la creación de datos
 Facade limpia la interfaz de usuario y Template Method garantiza la integridad de los procesos críticos del negocio. Estas técnicas proporcionan una base sólida para el crecimiento de cualquier proyecto de software.
