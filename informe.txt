@@ -1,0 +1,57 @@
+
+                                            TP1 - Implementación de Patrones de Diseño en Java
+
+                                            
+Asignatura: Programación II / Desarrollo de Software
+Valentino Cutrera
+16/04/2026
+
+1. Introducción
+El presente informe detalla la implementación de tres patrones de diseño fundamentales en el desarrollo de software: Prototype (Creación), Facade (Estructura) y Template Method (Comportamiento). El objetivo es demostrar cómo estas soluciones arquitectónicas mejoran la escalabilidad, el mantenimiento y la legibilidad del código en un entorno de desarrollo profesional utilizando Java y el IDE Apache NetBeans.
+
+2. Patrón de Creación: Prototype 
+¿Qué es?
+Es un patrón de diseño creacional que permite copiar objetos existentes sin que el código dependa de sus clases. En lugar de crear una instancia desde cero mediante el operador new (lo cual puede ser costoso en recursos), el objeto se "clona" a sí mismo.
+
+¿Cómo se utiliza en este proyecto?
+Se aplicó para la gestión de Perfiles de Configuración de Smart Glasses. Dado que configurar un dispositivo desde cero implica múltiples parámetros (brillo, conectividad, modo de ahorro), se utiliza una interfaz IPrototipo con el método clonar(). La clase ConfiguracionLentes implementa esta interfaz para permitir duplicar perfiles base de forma rápida.
+
+Ventajas:
+Eficiencia: Evita la inicialización costosa de objetos complejos.
+
+Flexibilidad: Permite añadir o eliminar prototipos en tiempo de ejecución.
+
+Desacoplamiento: El cliente no necesita conocer los detalles internos de la clase para obtener una copia.
+
+3. Patrón de Estructura: Facade 
+¿Qué es?
+Es un patrón estructural que proporciona una interfaz simplificada para un conjunto de clases, una biblioteca o cualquier subsistema complejo. Actúa como un punto de entrada único que oculta la complejidad interna al usuario.
+
+¿Cómo se utiliza en este proyecto?
+Se implementó para simular el Encendido de una Estación de Trabajo. El sistema interno involucra tres clases complejas: CPU, Memoria y DiscoDuro. La clase ComputadoraFacade ofrece el método simple iniciarComputadora(), el cual coordina internamente el orden correcto de encendido y carga de datos de todos los componentes.
+
+Ventajas:
+Simplicidad: El cliente interactúa con una sola clase en lugar de diez.
+
+Mantenibilidad: Si los componentes internos cambian, el código del cliente no se ve afectado mientras la fachada se mantenga igual.
+
+Aislamiento: Reduce las dependencias entre el subsistema y los clientes.
+
+4. Patrón de Comportamiento: Template Method 
+¿Qué es?
+Es un patrón de comportamiento que define el esqueleto de un algoritmo en una clase base, pero permite que las subclases redefinan ciertos pasos del mismo sin cambiar su estructura general.
+
+¿Cómo se utiliza en este proyecto?
+Se aplicó en un Procesador de Pagos Multi-plataforma. La clase abstracta ProcesadorPagos define el método final procesarTransaccion(), que establece los pasos fijos: validar datos, realizar cobro y enviar recibo. Mientras que la validación y el envío son comunes, el método realizarCobro() es abstracto, permitiendo que PagoTarjeta y PagoCripto implementen su propia lógica específica.
+
+Ventajas:
+Reutilización de código: El flujo general se escribe una sola vez en la clase padre.
+
+Control: El desarrollador de la clase base asegura que el orden de los pasos no sea alterado por las subclases.
+
+Extensibilidad: Es muy fácil añadir nuevos métodos de pago sin tocar el código existente.
+
+
+Conclusión
+La aplicación de patrones de diseño no es solo una práctica académica, sino una necesidad en el desarrollo de software moderno. Durante este TP, se ha comprobado que el uso de Prototype agiliza la creación de datos
+Facade limpia la interfaz de usuario y Template Method garantiza la integridad de los procesos críticos del negocio. Estas técnicas proporcionan una base sólida para el crecimiento de cualquier proyecto de software.
